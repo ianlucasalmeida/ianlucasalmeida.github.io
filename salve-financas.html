@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salve Finanças | IA Local</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        mono: ['"IBM Plex Mono"', 'monospace'],
+                    },
+                    colors: { terminal: { green: '#00ff41', bg: '#050505' } }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #050505; color: #f3f4f6; }
+        ::selection { background-color: #00ff41; color: #050505; }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col font-mono">
+
+    <nav class="p-6">
+        <a href="index.html" class="text-sm text-gray-500 hover:text-terminal-green transition-colors uppercase tracking-widest">
+            &larr; Return_To_Root
+        </a>
+    </nav>
+
+    <main class="flex-grow flex flex-col justify-center items-center px-6 text-center py-10">
+        <div class="border border-terminal-green text-terminal-green px-4 py-1 text-xs mb-10">
+            > STATUS: ONLINE_ || MOTOR: OLLAMA_LOCAL
+        </div>
+
+        <h1 class="font-serif text-6xl md:text-8xl tracking-tight mb-8">
+            Salve <br>
+            <span class="italic text-gray-400">Finanças.</span>
+        </h1>
+
+        <div class="max-w-xl mx-auto space-y-6 mt-8 text-left">
+            <p class="text-gray-400 font-serif text-2xl italic text-center mb-8">
+                A precisão da gestão patrimonial com o poder da computação edge.
+            </p>
+            <p class="text-gray-300 text-sm leading-relaxed border-l-2 border-terminal-green pl-4">
+                Desenvolvido com um motor LLM local integrado. Uma inteligência artificial arquitetada para interagir de forma orgânica: livre de travas, scripts engessados ou recusas em responder sobre suas finanças. Privacidade total via processamento em dispositivo.
+            </p>
+        </div>
+
+        <div class="mt-16">
+            <a href="assets/downloads/salve-financas.apk" download class="inline-flex items-center px-8 py-4 font-bold text-black bg-terminal-green uppercase hover:bg-white transition-colors">
+                >_ BAIXAR_APK
+            </a>
+            <a href="https://github.com/ianlucasalmeida/salve_financas" target="_blank" class="inline-flex items-center px-8 py-4 font-bold text-terminal-green border border-terminal-green uppercase tracking-widest hover:bg-terminal-green hover:text-black transition-colors">
+                >_ VER_CODIGO_FONTE
+            </a>
+        </div>
+    </main>
+
+    <footer class="p-6 text-center text-xs text-gray-700 mt-auto border-t border-gray-900">
+        sys.exit(0) // Processamento estritamente local.
+    </footer>
+</body>
+</html>
