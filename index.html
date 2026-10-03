@@ -1,217 +1,573 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Ian Lucas | Portfólio</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
-                    colors: { brand: { dark: '#111111', light: '#f8f9fa', accent: '#005b9f' } }
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#111111',
+                            light: '#f8f9fa',
+                            accent: '#005b9f'
+                        }
+                    }
                 }
             }
         }
     </script>
+
     <style>
-        body { -webkit-font-smoothing: antialiased; }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f1f1; }
-        ::-webkit-scrollbar-thumb { background: #c1c1c1; border-radius: 4px; }
+        body {
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 4px;
+        }
+
+        .logo-mark {
+            transition:
+                transform 0.3s ease,
+                color 0.3s ease;
+        }
+
+        .logo-link:hover .logo-mark {
+            transform: translateY(-2px);
+        }
+
+        .project-card {
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+        }
     </style>
 </head>
+
 <body class="bg-brand-light text-brand-dark font-sans relative">
 
+    <!-- NAVIGATION -->
     <nav class="fixed w-full bg-brand-light/90 backdrop-blur-sm z-50 border-b border-gray-200">
+
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <span class="font-semibold tracking-tight text-lg">Ian Lucas.</span>
-            <div class="space-x-6 text-sm font-medium">
-                <a href="#projetos" class="text-gray-600 hover:text-brand-accent transition-colors">Projetos</a>
-                <a href="curriculo.html" class="text-gray-600 hover:text-brand-accent transition-colors">Currículo</a>
+
+            <!-- LOGO -->
+            <a href="#" class="logo-link flex items-center gap-3 group" aria-label="Ian Lucas - Página inicial">
+
+                <div class="logo-mark text-brand-dark group-hover:text-brand-accent">
+
+                    <svg width="38"
+                         height="38"
+                         viewBox="0 0 42 42"
+                         fill="none"
+                         xmlns="http://www.w3.org/2000/svg">
+
+                        <!-- Moldura -->
+                        <rect x="1"
+                              y="1"
+                              width="40"
+                              height="40"
+                              rx="10"
+                              stroke="currentColor"
+                              stroke-width="1.5" />
+
+                        <!-- Monograma IL -->
+                        <path d="M13 11V31"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round" />
+
+                        <path d="M20 11V31H30"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round" />
+
+                    </svg>
+
+                </div>
+
+                <div class="flex flex-col leading-none">
+                    <span class="font-semibold tracking-tight text-sm">
+                        Ian Lucas
+                    </span>
+
+                    <span class="text-[10px] uppercase tracking-[0.18em] text-gray-500 mt-1">
+                        Tecnologia & Dados
+                    </span>
+                </div>
+
+            </a>
+
+
+            <!-- MENU -->
+            <div class="flex items-center gap-6 text-sm font-medium">
+
+                <a href="#projetos"
+                   class="text-gray-600 hover:text-brand-accent transition-colors">
+                    Projetos
+                </a>
+
+                <a href="curriculo.html"
+                   class="text-gray-600 hover:text-brand-accent transition-colors">
+                    Currículo
+                </a>
+
             </div>
+
         </div>
+
     </nav>
 
-   <section class="pt-40 pb-20 px-6 max-w-7xl mx-auto flex flex-col justify-center min-h-[60vh]">
-    <h1 class="text-5xl md:text-7xl font-light tracking-tight mb-6">
-        Dados, Tecnologia <br>
-        <span class="font-semibold text-brand-accent">& Soluções Digitais.</span>
-    </h1>
 
-    <p class="text-lg text-gray-600 max-w-2xl font-light mb-10">
-        Profissional de tecnologia com atuação em Dados & Analytics na Deloitte,
-        experiência em desenvolvimento de sistemas e automação, e formação em
-        Análise e Desenvolvimento de Sistemas e Ciências Biológicas.
-    </p>
-</section>
+    <!-- HERO -->
+    <section class="pt-40 pb-28 px-6 max-w-7xl mx-auto flex flex-col justify-center min-h-[68vh]">
 
-    <section id="projetos" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-3xl font-semibold mb-12 border-b pb-4">Soluções Desenvolvidas</h2>
-            
-            <div class="grid grid-cols-1 md:text-left gap-8 md:grid-cols-3">
-                <div class="bg-brand-light p-8 rounded-lg border border-gray-100 hover:shadow-lg transition-all flex flex-col">
-                    <span class="text-xs font-bold text-brand-accent uppercase mb-4">Flutter / IA Local</span>
-                    <h3 class="text-xl font-semibold mb-3">Salve Finanças</h3>
-                    <p class="text-gray-600 text-sm mb-6 flex-grow">Concierge financeiro com LLM local integrado. Uma solução que prioriza a privacidade e a fluidez na interação com dados financeiros sensíveis.</p>
-                    <a href="salve-financas.html" class="font-semibold text-brand-dark hover:text-brand-accent mt-auto">Conhecer o Produto &rarr;</a>
-                </div>
+        <div class="max-w-4xl">
 
-                <div class="bg-brand-light p-8 rounded-lg border border-gray-100 hover:shadow-lg transition-all flex flex-col">
-                    <span class="text-xs font-bold text-brand-accent uppercase mb-4">Google Cloud / Vision AI</span>
-                    <h3 class="text-xl font-semibold mb-3">Vision-GCloud</h3>
-                    <p class="text-gray-600 text-sm mb-6 flex-grow">Arquitetura serverless implementada no Google Cloud para análise automatizada de imagens utilizando Vision AI.</p>
-                    <a href="https://github.com/ianlucasalmeida/vision-gcloud" class="font-semibold text-brand-dark hover:text-brand-accent mt-auto">Ver Repositório &rarr;</a>
-                </div>
+            <div class="flex items-center gap-3 mb-8">
 
-                <div class="bg-brand-light p-8 rounded-lg border border-gray-100 hover:shadow-lg transition-all flex flex-col">
-                    <span class="text-xs font-bold text-brand-accent uppercase mb-4">Java Spring Boot / REST API</span>
-                    <h3 class="text-xl font-semibold mb-3">Peça Já</h3>
-                    <p class="text-gray-600 text-sm mb-6 flex-grow">Plataforma de e-commerce automotivo com backend robusto e integração de APIs reais para gestão de estoque e pedidos.</p>
-                    <a href="https://github.com/ianlucasalmeida/Bootcamp_Java_Deloitte" class="font-semibold text-brand-dark hover:text-brand-accent mt-auto">Ver Código &rarr;</a>
-                </div>
+                <span class="w-8 h-px bg-brand-accent"></span>
+
+                <span class="text-xs font-medium uppercase tracking-[0.2em] text-gray-500">
+                    Dados · Tecnologia · Soluções
+                </span>
+
             </div>
+
+
+            <h1 class="text-5xl md:text-7xl font-light tracking-tight leading-[1.05] mb-8">
+
+                Dados, Tecnologia
+
+                <br>
+
+                <span class="font-semibold text-brand-accent">
+                    & Soluções Digitais.
+                </span>
+
+            </h1>
+
+
+            <p class="text-lg md:text-xl text-gray-600 max-w-2xl font-light leading-relaxed mb-10">
+
+                Profissional de tecnologia com atuação em
+                <strong class="font-medium text-gray-800">Dados & Analytics</strong>
+                na Deloitte, combinando análise de dados, desenvolvimento de
+                sistemas, automação de processos e computação em nuvem para
+                construir soluções orientadas a dados.
+
+            </p>
+
+
+            <div class="flex flex-wrap items-center gap-4">
+
+                <a href="#projetos"
+                   class="inline-flex items-center px-6 py-3 bg-brand-dark text-white text-sm font-medium rounded-sm hover:bg-brand-accent transition-colors">
+
+                    Explorar projetos
+
+                    <span class="ml-3">&rarr;</span>
+
+                </a>
+
+                <a href="curriculo.html"
+                   class="inline-flex items-center px-6 py-3 border border-gray-300 text-gray-700 text-sm font-medium rounded-sm hover:border-brand-dark hover:text-brand-dark transition-colors">
+
+                    Ver currículo
+
+                </a>
+
+            </div>
+
         </div>
+
     </section>
 
-    <section class="py-20 bg-brand-light">
-    <div class="max-w-7xl mx-auto px-6">
 
-        <div class="flex flex-col md:flex-row justify-between items-start md:items-end border-b pb-4 mb-12">
-            <h2 class="text-3xl font-semibold">Resumo Profissional</h2>
+    <!-- PROJETOS -->
+    <section id="projetos" class="py-24 bg-white">
 
-            <a href="curriculo.html"
-               class="mt-4 md:mt-0 inline-flex items-center px-5 py-2 bg-brand-dark text-white text-sm font-medium rounded-sm hover:bg-brand-accent transition-colors">
-                Ver Currículo Detalhado &rarr;
-            </a>
-        </div>
+        <div class="max-w-7xl mx-auto px-6">
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+            <div class="flex flex-col md:flex-row justify-between md:items-end mb-12 gap-4">
 
-            <!-- Perfil e Formação -->
-            <div>
-                <p class="text-gray-700 leading-relaxed text-sm mb-8">
-                    Profissional de Tecnologia da Informação com atuação em
-                    <strong>Dados & Analytics</strong>, atualmente na Deloitte.
-                    Minha trajetória combina desenvolvimento de sistemas, análise
-                    de dados, automação de processos e fundamentos de computação
-                    em nuvem, com experiência acadêmica e profissional em
-                    diferentes áreas.
-                </p>
+                <div>
 
-                <p class="text-gray-700 leading-relaxed text-sm mb-8">
-                    Minha formação em Ciências Biológicas contribuiu para uma
-                    abordagem analítica e orientada à investigação, desenvolvida
-                    posteriormente com a formação em Análise e Desenvolvimento de
-                    Sistemas. Essa combinação me permite transitar entre dados,
-                    tecnologia e processos para estruturar soluções orientadas
-                    à resolução de problemas.
-                </p>
-
-                <h3 class="text-xl font-semibold mb-6 text-gray-800">
-                    Formação Acadêmica
-                </h3>
-
-                <div class="space-y-5">
-                    <div>
-                        <h4 class="font-bold text-brand-dark">
-                            Análise e Desenvolvimento de Sistemas
-                        </h4>
-                        <p class="text-sm text-gray-600">
-                            IFPE — Jaboatão dos Guararapes
-                        </p>
-                    </div>
-
-                    <div>
-                        <h4 class="font-bold text-brand-dark">
-                            Licenciatura em Ciências Biológicas
-                        </h4>
-                        <p class="text-sm text-gray-600">
-                            UFRPE — 2017–2023
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Competências e Experiência -->
-            <div>
-
-                <h3 class="text-xl font-semibold mb-6 text-gray-800">
-                    Competências Técnicas
-                </h3>
-
-                <div class="flex flex-wrap gap-2 mb-10">
-                    <span class="px-3 py-1 bg-white border border-gray-200 text-xs font-medium">
-                        Data & Analytics
+                    <span class="text-xs font-medium uppercase tracking-[0.2em] text-brand-accent">
+                        Portfólio
                     </span>
-                    <span class="px-3 py-1 bg-white border border-gray-200 text-xs font-medium">
-                        Python
-                    </span>
-                    <span class="px-3 py-1 bg-white border border-gray-200 text-xs font-medium">
-                        SQL
-                    </span>
-                    <span class="px-3 py-1 bg-white border border-gray-200 text-xs font-medium">
-                        Power BI
-                    </span>
-                    <span class="px-3 py-1 bg-white border border-gray-200 text-xs font-medium">
-                        Machine Learning
-                    </span>
-                    <span class="px-3 py-1 bg-white border border-gray-200 text-xs font-medium">
-                        Java
-                    </span>
-                    <span class="px-3 py-1 bg-white border border-gray-200 text-xs font-medium">
-                        Spring Boot
-                    </span>
-                    <span class="px-3 py-1 bg-white border border-gray-200 text-xs font-medium">
-                        Cloud Computing
-                    </span>
-                    <span class="px-3 py-1 bg-white border border-gray-200 text-xs font-medium">
-                        AWS
-                    </span>
-                    <span class="px-3 py-1 bg-white border border-gray-200 text-xs font-medium">
-                        Automação
-                    </span>
+
+                    <h2 class="text-3xl font-semibold mt-3">
+                        Soluções Desenvolvidas
+                    </h2>
+
                 </div>
 
-                <h3 class="text-xl font-semibold mb-6 text-gray-800">
-                    Experiência
-                </h3>
-
-                <ul class="space-y-5 text-sm text-gray-700">
-
-                    <li>
-                        <strong>Deloitte:</strong>
-                        Atuação em Dados & Analytics, contribuindo para
-                        análises, processos e soluções orientadas a dados.
-                    </li>
-
-                    <li>
-                        <strong>IFPE:</strong>
-                        Desenvolvimento Front-End em projeto de solução
-                        para gestão farmacêutica, incluindo levantamento
-                        de requisitos e participação no desenvolvimento
-                        da solução.
-                    </li>
-
-                    <li>
-                        <strong>CRCN-NE:</strong>
-                        Pesquisa, análise e automação de dados científicos
-                        e ambientais, utilizando programação e ferramentas
-                        de análise de dados.
-                    </li>
-
-                </ul>
+                <p class="text-sm text-gray-500 max-w-md">
+                    Projetos que combinam desenvolvimento de software,
+                    dados, inteligência artificial e computação em nuvem.
+                </p>
 
             </div>
+
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+
+                <!-- SALVE FINANÇAS -->
+                <div class="project-card bg-brand-light p-8 rounded-lg border border-gray-100 hover:shadow-lg flex flex-col">
+
+                    <span class="text-xs font-bold text-brand-accent uppercase tracking-wide mb-4">
+                        Flutter / IA Local
+                    </span>
+
+                    <h3 class="text-xl font-semibold mb-3">
+                        Salve Finanças
+                    </h3>
+
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
+                        Concierge financeiro com LLM local integrado.
+                        Uma solução que prioriza privacidade e fluidez
+                        na interação com dados financeiros sensíveis.
+                    </p>
+
+                    <a href="salve-financas.html"
+                       class="font-semibold text-brand-dark hover:text-brand-accent transition-colors mt-auto">
+
+                        Conhecer o Produto
+                        <span class="ml-1">&rarr;</span>
+
+                    </a>
+
+                </div>
+
+
+                <!-- VISION GCLOUD -->
+                <div class="project-card bg-brand-light p-8 rounded-lg border border-gray-100 hover:shadow-lg flex flex-col">
+
+                    <span class="text-xs font-bold text-brand-accent uppercase tracking-wide mb-4">
+                        Google Cloud / Vision AI
+                    </span>
+
+                    <h3 class="text-xl font-semibold mb-3">
+                        Vision-GCloud
+                    </h3>
+
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
+                        Arquitetura serverless implementada no Google Cloud
+                        para análise automatizada de imagens utilizando
+                        Vision AI.
+                    </p>
+
+                    <a href="https://github.com/ianlucasalmeida/vision-gcloud"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="font-semibold text-brand-dark hover:text-brand-accent transition-colors mt-auto">
+
+                        Ver Repositório
+                        <span class="ml-1">&rarr;</span>
+
+                    </a>
+
+                </div>
+
+
+                <!-- PEÇA JÁ -->
+                <div class="project-card bg-brand-light p-8 rounded-lg border border-gray-100 hover:shadow-lg flex flex-col">
+
+                    <span class="text-xs font-bold text-brand-accent uppercase tracking-wide mb-4">
+                        Java / Spring Boot / REST API
+                    </span>
+
+                    <h3 class="text-xl font-semibold mb-3">
+                        Peça Já
+                    </h3>
+
+                    <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
+                        Plataforma de e-commerce automotivo com backend
+                        desenvolvido em Java e integração de APIs para
+                        gestão de estoque e pedidos.
+                    </p>
+
+                    <a href="https://github.com/ianlucasalmeida/Bootcamp_Java_Deloitte"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       class="font-semibold text-brand-dark hover:text-brand-accent transition-colors mt-auto">
+
+                        Ver Código
+                        <span class="ml-1">&rarr;</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
         </div>
-    </div>
-</section>
-    <footer class="bg-brand-dark text-white py-8 text-center text-sm font-light">
-        <p>&copy; 2026 Ian Lucas de Almeida Silva. Todos os direitos reservados.</p>
+
+    </section>
+
+
+    <!-- RESUMO PROFISSIONAL -->
+    <section class="py-24 bg-brand-light">
+
+        <div class="max-w-7xl mx-auto px-6">
+
+
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-end border-b pb-4 mb-12">
+
+                <div>
+
+                    <span class="text-xs font-medium uppercase tracking-[0.2em] text-brand-accent">
+                        Perfil
+                    </span>
+
+                    <h2 class="text-3xl font-semibold mt-3">
+                        Resumo Profissional
+                    </h2>
+
+                </div>
+
+                <a href="curriculo.html"
+                   class="mt-4 md:mt-0 inline-flex items-center px-5 py-2 bg-brand-dark text-white text-sm font-medium rounded-sm hover:bg-brand-accent transition-colors">
+
+                    Ver Currículo Detalhado
+                    <span class="ml-2">&rarr;</span>
+
+                </a>
+
+            </div>
+
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+
+
+                <!-- PERFIL -->
+                <div>
+
+                    <p class="text-gray-700 leading-relaxed text-sm mb-8">
+
+                        Profissional de Tecnologia da Informação com atuação em
+                        <strong>Dados & Analytics</strong>, atualmente na Deloitte.
+                        Minha trajetória combina desenvolvimento de sistemas,
+                        análise de dados, automação de processos e fundamentos
+                        de computação em nuvem.
+
+                    </p>
+
+
+                    <p class="text-gray-700 leading-relaxed text-sm mb-10">
+
+                        Minha formação em Ciências Biológicas contribuiu para
+                        uma abordagem analítica e orientada à investigação,
+                        desenvolvida posteriormente com a formação em Análise
+                        e Desenvolvimento de Sistemas. Essa combinação me
+                        permite transitar entre dados, tecnologia e processos
+                        para estruturar soluções orientadas à resolução de
+                        problemas.
+
+                    </p>
+
+
+                    <h3 class="text-xl font-semibold mb-6 text-gray-800">
+                        Formação Acadêmica
+                    </h3>
+
+
+                    <div class="space-y-5">
+
+                        <div>
+                            <h4 class="font-bold text-brand-dark">
+                                Análise e Desenvolvimento de Sistemas
+                            </h4>
+
+                            <p class="text-sm text-gray-600">
+                                IFPE — Jaboatão dos Guararapes
+                            </p>
+                        </div>
+
+
+                        <div>
+                            <h4 class="font-bold text-brand-dark">
+                                Licenciatura em Ciências Biológicas
+                            </h4>
+
+                            <p class="text-sm text-gray-600">
+                                UFRPE — 2017–2023
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- COMPETÊNCIAS -->
+                <div>
+
+                    <h3 class="text-xl font-semibold mb-6 text-gray-800">
+                        Competências Técnicas
+                    </h3>
+
+
+                    <div class="flex flex-wrap gap-2 mb-10">
+
+                        <span class="px-3 py-1 bg-white border border-gray-200 text-xs font-medium">
+                            Data & Analytics
+                        </span>
+
+                        <span class="px-3 py-1 bg-white border border-gray-200 text-xs font-medium">
+                            Python
+                        </span>
+
+                        <span class="px-3 py-1 bg-white border border-gray-200 text-xs font-medium">
+                            SQL
+                        </span>
+
+                        <span class="px-3 py-1 bg-white border border-gray-200 text-xs font-medium">
+                            Power BI
+                        </span>
+
+                        <span class="px-3 py-1 bg-white border border-gray-200 text-xs font-medium">
+                            Machine Learning
+                        </span>
+
+                        <span class="px-3 py-1 bg-white border border-gray-200 text-xs font-medium">
+                            Java
+                        </span>
+
+                        <span class="px-3 py-1 bg-white border border-gray-200 text-xs font-medium">
+                            Spring Boot
+                        </span>
+
+                        <span class="px-3 py-1 bg-white border border-gray-200 text-xs font-medium">
+                            Cloud Computing
+                        </span>
+
+                        <span class="px-3 py-1 bg-white border border-gray-200 text-xs font-medium">
+                            AWS
+                        </span>
+
+                        <span class="px-3 py-1 bg-white border border-gray-200 text-xs font-medium">
+                            Automação
+                        </span>
+
+                    </div>
+
+
+                    <h3 class="text-xl font-semibold mb-6 text-gray-800">
+                        Experiência
+                    </h3>
+
+
+                    <ul class="space-y-5 text-sm text-gray-700">
+
+                        <li>
+                            <strong>Deloitte:</strong>
+                            Atuação em Dados & Analytics, contribuindo para
+                            análises, processos e soluções orientadas a dados.
+                        </li>
+
+                        <li>
+                            <strong>IFPE:</strong>
+                            Desenvolvimento Front-End em projeto de solução
+                            para gestão farmacêutica, incluindo levantamento
+                            de requisitos e participação no desenvolvimento
+                            da solução.
+                        </li>
+
+                        <li>
+                            <strong>CRCN-NE:</strong>
+                            Pesquisa, análise e automação de dados científicos
+                            e ambientais, utilizando programação e ferramentas
+                            de análise de dados.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="bg-brand-dark text-white py-10 text-center text-sm font-light">
+
+        <div class="max-w-7xl mx-auto px-6">
+
+            <div class="flex justify-center mb-4">
+
+                <svg width="32"
+                     height="32"
+                     viewBox="0 0 42 42"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+
+                    <rect x="1"
+                          y="1"
+                          width="40"
+                          height="40"
+                          rx="10"
+                          stroke="currentColor"
+                          stroke-width="1.5" />
+
+                    <path d="M13 11V31"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round" />
+
+                    <path d="M20 11V31H30"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round" />
+
+                </svg>
+
+            </div>
+
+            <p class="text-gray-400">
+                &copy; 2026 Ian Lucas de Almeida Silva. Todos os direitos reservados.
+            </p>
+
+        </div>
+
     </footer>
 
 </body>
+
 </html>
